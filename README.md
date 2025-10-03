@@ -1,4 +1,9 @@
-# Welcome to your Lovable project
+# Berkeley Data Canvas
+
+A modern portfolio website showcasing data science projects and research.
+
+## Live Website
+🌐 **https://ssarda23.github.io/berkeley-data-canvas**
 
 ## Project info
 

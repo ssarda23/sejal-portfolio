@@ -28,6 +28,7 @@ const About = () => {
 
               <p className="text-lg leading-relaxed text-muted-foreground">
               I’m a UC Berkeley senior in Data Science & Statistics with a minor in City Planning. My work spans Bayesian modeling, housing price prediction, and urban mobility research, alongside co-founding SpendWise, a personal finance startup. 
+              
               </p>
 
               <p className="text-lg leading-relaxed text-muted-foreground">
