@@ -1,0 +1,179 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Berkeley-inspired portfolio design system - Professional yet creative */
+
+@layer base {
+  :root {
+    /* Dark Theme - Berkeley Blue & Gold Color Palette */
+    --background: 213 84% 8%;
+    --foreground: 0 0% 98%;
+
+    --card: 213 84% 10%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 213 84% 10%;
+    --popover-foreground: 0 0% 98%;
+
+    /* Berkeley Blue as primary */
+    --primary: 213 65% 45%;
+    --primary-foreground: 0 0% 98%;
+    --primary-glow: 213 50% 35%;
+
+    /* Dark secondary tones */
+    --secondary: 213 32% 18%;
+    --secondary-foreground: 0 0% 98%;
+
+    --muted: 213 32% 18%;
+    --muted-foreground: 215 20% 65%;
+
+    /* Berkeley Gold as accent */
+    --accent: 45 85% 55%;
+    --accent-foreground: 213 84% 8%;
+    --accent-glow: 45 70% 45%;
+
+    --destructive: 0 63% 31%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 213 32% 18%;
+    --input: 213 32% 18%;
+    --ring: 213 65% 45%;
+
+    /* Portfolio-specific design tokens */
+    --gradient-hero: linear-gradient(135deg, hsl(213 65% 45%), hsl(213 50% 35%));
+    --gradient-accent: linear-gradient(135deg, hsl(45 85% 55%), hsl(45 70% 45%));
+    --gradient-subtle: linear-gradient(180deg, hsl(213 84% 8%), hsl(213 32% 18%));
+    
+    /* Professional shadows */
+    --shadow-elegant: 0 10px 30px -10px hsl(0 0% 0% / 0.3);
+    --shadow-glow: 0 0 40px hsl(213 65% 45% / 0.2);
+    --shadow-card: 0 4px 20px hsl(0 0% 0% / 0.15);
+    
+    /* Smooth transitions */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+    --radius: 0.5rem;
+
+    --sidebar-background: 240 5.9% 10%;
+
+    --sidebar-foreground: 240 4.8% 95.9%;
+
+    --sidebar-primary: 224.3 76.3% 48%;
+
+    --sidebar-primary-foreground: 0 0% 100%;
+
+    --sidebar-accent: 240 3.7% 15.9%;
+
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+
+    --sidebar-border: 240 3.7% 15.9%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 213 84% 8%;
+    --foreground: 0 0% 98%;
+
+    --card: 213 84% 10%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 213 84% 10%;
+    --popover-foreground: 0 0% 98%;
+
+    --primary: 213 65% 45%;
+    --primary-foreground: 0 0% 98%;
+    --primary-glow: 213 50% 35%;
+
+    --secondary: 213 32% 18%;
+    --secondary-foreground: 0 0% 98%;
+
+    --muted: 213 32% 18%;
+    --muted-foreground: 215 20% 65%;
+
+    --accent: 45 85% 55%;
+    --accent-foreground: 213 84% 8%;
+    --accent-glow: 45 70% 45%;
+
+    --destructive: 0 63% 31%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 213 32% 18%;
+    --input: 213 32% 18%;
+    --ring: 213 65% 45%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer components {
+  /* Portfolio-specific component styles */
+  .portfolio-hero {
+    background: var(--gradient-hero);
+    box-shadow: var(--shadow-glow);
+  }
+  
+  .portfolio-card {
+    background: hsl(var(--card));
+    box-shadow: var(--shadow-card);
+    transition: var(--transition-smooth);
+  }
+  
+  .portfolio-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-elegant);
+  }
+  
+  .section-title {
+    background: var(--gradient-hero);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  
+  .accent-glow {
+    background: var(--gradient-accent);
+    box-shadow: 0 0 30px hsl(var(--accent-glow) / 0.3);
+  }
+  
+  .smooth-reveal {
+    animation: fadeInUp 0.8s ease-out forwards;
+    opacity: 0;
+    transform: translateY(30px);
+  }
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
